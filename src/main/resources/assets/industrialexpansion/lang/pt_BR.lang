@@ -1,0 +1,12 @@
+//Interface
+itemGroup.tabIndustrialExpansion=Industrial Expansion
+
+
+//Items
+item.CoalBall.name=Bola de Carvão
+item.CompactCoalBall.name=Bola de Carvão Compactada
+item.CoalChunk.name=Pedaço Grosso de Carvão
+item.quantumHelmet.name=Capacete Quântico
+item.quantumPlate.name=Peitoral Quântico
+item.quantumLegs.name=Calças Quânticas
+item.quantumBoots.name=Botas Quânticas

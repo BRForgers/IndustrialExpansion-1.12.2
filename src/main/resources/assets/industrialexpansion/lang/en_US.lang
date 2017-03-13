@@ -1,0 +1,13 @@
+//Interface
+itemGroup.tabIndustrialExpansion=Industrial Expansion
+
+
+//Items
+item.CoalBall.name=Coal Ball
+item.CompactCoalBall.name=Compact Coal Ball
+item.CoalChunk.name=Coal Chunk
+item.quantumHelmet.name=Quantum Helmet
+item.quantumPlate.name=Quantum Chestplate
+item.quantumLegs.name=Quantum Leggings
+item.quantumBoots.name=Quantum Boots
+

@@ -1,0 +1,20 @@
+[
+  {
+    "modid": "IndustrialExpansion",
+    "name": "IndustrialExpansion",
+    "description": "...",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "TheBRForgersTeam"
+    ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": [
+      "ThermalExpansion"
+    ]
+  }
+]

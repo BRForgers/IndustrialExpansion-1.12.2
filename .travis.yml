@@ -1,0 +1,22 @@
+language: java
+
+jdk:
+- oraclejdk7
+- oraclejdk8
+
+branches:
+  only:
+    - master
+    
+before_install:
+ - chmod +x gradlew
+
+install:
+- ./gradlew setupCIWorkspace
+
+script:
+- ./gradlew build
+
+after_success:
+- chmod +x curse_upload
+-./curse_upload
