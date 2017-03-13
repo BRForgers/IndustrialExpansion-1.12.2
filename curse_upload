@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cd ./build/libs/
+rm *-sources.jar
 FILE_NAME=`echo IndustrialExpansion-*`
 cd ../../
 FILE_LOCATION=`echo "./build/libs/$FILE_NAME"`
