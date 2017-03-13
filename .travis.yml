@@ -7,7 +7,7 @@ jdk:
 branches:
   only:
     - master
-    
+
 before_install:
  - chmod +x gradlew
 
@@ -19,4 +19,4 @@ script:
 
 after_success:
 - chmod +x curse_upload
--./curse_upload
+- ./curse_upload
