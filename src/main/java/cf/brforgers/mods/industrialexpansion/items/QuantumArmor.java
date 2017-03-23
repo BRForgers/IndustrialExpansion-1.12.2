@@ -82,9 +82,6 @@ public class QuantumArmor extends ItemArmorCore implements ISpecialArmor, IEnerg
     @Override
     public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged)
     {
-        if (super.shouldCauseReequipAnimation(oldStack, newStack, slotChanged)) {
-            if (slotChanged) {}
-        }
         return !ItemHelper.areItemStacksEqualIgnoreTags(oldStack, newStack, new String[] { "Energy" });
     }
 
@@ -94,7 +91,7 @@ public class QuantumArmor extends ItemArmorCore implements ISpecialArmor, IEnerg
         if (stack.getTagCompound() == null) {
             EnergyHelper.setDefaultEnergyTag(stack, 0);
         }
-        return 1.0D - stack.getTagCompound().getInteger("Energy") / this.maxEnergy;
+        return 1.0D - (double) stack.getTagCompound().getInteger("Energy") / (double) this.maxEnergy;
     }
 
     @Override
@@ -141,8 +138,9 @@ public class QuantumArmor extends ItemArmorCore implements ISpecialArmor, IEnerg
                 return 30;
             case FEET:
                 return 15;
+            default:
+                return 0;
         }
-        return 0;
     }
 
     protected int getEnergyPerDamage(ItemStack stack) {
@@ -155,7 +153,7 @@ public class QuantumArmor extends ItemArmorCore implements ISpecialArmor, IEnerg
     @Override
     public ArmorProperties getProperties(EntityLivingBase player, ItemStack armor, DamageSource source, double damage, int slot) {
 
-        if (source.damageType.equals("quantum")) {
+        if ("quantum".equals(source.damageType)) {
             return QUANTUM;
         } else if (source.isUnblockable()) {
             int absorbMax = getEnergyPerDamage(armor) > 0 ? 25 * getEnergyStored(armor) / getEnergyPerDamage(armor) : 0;

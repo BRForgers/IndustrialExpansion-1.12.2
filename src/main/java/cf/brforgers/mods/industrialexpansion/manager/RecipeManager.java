@@ -60,7 +60,8 @@ public class RecipeManager {
                 'C', ForgeRegistries.ITEMS.getValue(new ResourceLocation("thermalfoundation","armor.boots_tin")),
                 'D', BlockStorageAlloy.blockEnderium);
         //More Recipes Update
-        int energyPress = 4000, energyStorage = 400;
+        int energyPress = 4000,
+            energyStorage = 400;
         CompactorManager.addRecipe(energyPress, new ItemStack(Items.BLAZE_POWDER,5), new ItemStack(Items.BLAZE_ROD), CompactorManager.Mode.PRESS);
         CompactorManager.addRecipe(energyPress, new ItemStack(Blocks.SNOW), new ItemStack(Blocks.ICE), CompactorManager.Mode.PRESS);
         CompactorManager.addRecipe(energyStorage, new ItemStack(Items.SNOWBALL, 4), new ItemStack(Blocks.SNOW), CompactorManager.Mode.STORAGE);
