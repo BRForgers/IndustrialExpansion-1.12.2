@@ -3,7 +3,7 @@ package cf.brforgers.mods.industrialexpansion.manager;
 import cf.brforgers.mods.industrialexpansion.helper.ConfigHandler;
 import cofh.thermalexpansion.init.TEFlorbs;
 import cofh.thermalexpansion.item.ItemFrame;
-import cofh.thermalexpansion.util.crafting.CompactorManager;
+import cofh.thermalexpansion.util.managers.machine.CompactorManager;
 import cofh.thermalfoundation.block.BlockGlass;
 import cofh.thermalfoundation.block.BlockStorageAlloy;
 import cofh.thermalfoundation.item.ItemMaterial;
