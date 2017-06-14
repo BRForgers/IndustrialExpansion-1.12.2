@@ -3,10 +3,10 @@ package cf.brforgers.mods.industrialexpansion.manager;
 import cf.brforgers.mods.industrialexpansion.helper.ConfigHandler;
 import cofh.thermalexpansion.init.TEFlorbs;
 import cofh.thermalexpansion.item.ItemFrame;
-import cofh.thermalexpansion.util.crafting.CompactorManager;
+import cofh.thermalexpansion.util.managers.machine.CompactorManager;
 import cofh.thermalfoundation.block.BlockGlass;
-import cofh.thermalfoundation.block.BlockStorageAlloy;
 import cofh.thermalfoundation.item.ItemMaterial;
+import cofh.thermalexpansion.item.ItemCapacitor;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
@@ -37,7 +37,7 @@ public class RecipeManager {
                 " A ","BCB","DED",
                 'A', Items.DIAMOND_HELMET,
                 'B', ItemMaterial.plateIridium,
-                'C', BlockStorageAlloy.blockEnderium,
+                'C', ItemCapacitor.capacitorResonant,
                 'D', ItemMaterial.gearLumium,
                 'E', BlockGlass.glassIridium);
         GameRegistry.addShapedRecipe(new ItemStack(ItemManager.itemPlateQuantum,1),
@@ -45,11 +45,11 @@ public class RecipeManager {
                 'A', ItemMaterial.ingotEnderium,
                 'B', Items.DIAMOND_CHESTPLATE,
                 'C', ItemMaterial.plateIridium,
-                'D', BlockStorageAlloy.blockEnderium);
+                'D', ItemCapacitor.capacitorResonant);
         GameRegistry.addShapedRecipe(new ItemStack(ItemManager.itemLegsQuantum,1),
                 "ABA","CDC","E E",
                 'A', ItemFrame.frameMachine,
-                'B', BlockStorageAlloy.blockEnderium,
+                'B', ItemCapacitor.capacitorResonant,
                 'C', ItemMaterial.plateIridium,
                 'D', Items.DIAMOND_LEGGINGS,
                 'E', glowflorb);
@@ -58,7 +58,7 @@ public class RecipeManager {
                 'A', ItemMaterial.plateIridium,
                 'B', Items.DIAMOND_BOOTS,
                 'C', ForgeRegistries.ITEMS.getValue(new ResourceLocation("thermalfoundation","armor.boots_tin")),
-                'D', BlockStorageAlloy.blockEnderium);
+                'D', ItemCapacitor.capacitorResonant);
         //More Recipes Update
         int energyPress = 4000,
             energyStorage = 400;

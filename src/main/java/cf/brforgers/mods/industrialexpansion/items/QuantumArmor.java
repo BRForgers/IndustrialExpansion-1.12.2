@@ -28,8 +28,8 @@ public class QuantumArmor extends ItemArmorCore implements ISpecialArmor, IEnerg
 
     public static final ISpecialArmor.ArmorProperties QUANTUM = new ArmorProperties(0, 0.20D, Integer.MAX_VALUE);
 
-    public int maxEnergy = 20000000;
-    public int maxTransfer = 32000;
+    public int maxEnergy = 25000000;
+    public int maxTransfer = 50000;
 
     public double absorbRatio = 1.0E7D;
     public int energyPerDamage = 20000;
