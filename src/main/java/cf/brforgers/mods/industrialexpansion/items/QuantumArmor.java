@@ -5,6 +5,7 @@ import cofh.lib.util.helpers.ItemHelper;
 import net.minecraft.init.Enchantments;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.*;
+import net.minecraft.util.NonNullList;
 import net.minecraftforge.common.ISpecialArmor;
 import cofh.api.energy.IEnergyContainerItem;
 import cofh.lib.util.helpers.EnergyHelper;
@@ -23,6 +24,10 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
+import javax.annotation.Nonnull;
 
 public class QuantumArmor extends ItemArmorCore implements ISpecialArmor, IEnergyContainerItem {
 
@@ -59,7 +64,8 @@ public class QuantumArmor extends ItemArmorCore implements ISpecialArmor, IEnerg
     }
 
     @Override
-    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean check) {
+    @SideOnly(Side.CLIENT)
+    public void addInformation(ItemStack stack, EntityPlayer player, List<String> list, boolean check) {
 
         if (StringHelper.displayShiftForDetail && !StringHelper.isShiftKeyDown()) {
             list.add(StringHelper.shiftForDetails());
@@ -82,7 +88,7 @@ public class QuantumArmor extends ItemArmorCore implements ISpecialArmor, IEnerg
     @Override
     public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged)
     {
-        return !ItemHelper.areItemStacksEqualIgnoreTags(oldStack, newStack, new String[] { "Energy" });
+        return !ItemHelper.areItemStacksEqualIgnoreTags(oldStack, newStack, "Energy");
     }
 
 
@@ -113,8 +119,7 @@ public class QuantumArmor extends ItemArmorCore implements ISpecialArmor, IEnerg
     }
 
     @Override
-    public void getSubItems(Item item, CreativeTabs tab, List list) {
-
+    public void getSubItems(@Nonnull Item item, CreativeTabs tab, NonNullList<ItemStack> list) {
         list.add(EnergyHelper.setDefaultEnergyTag(new ItemStack(item, 1, 0), 0));
         list.add(EnergyHelper.setDefaultEnergyTag(new ItemStack(item, 1, 0), maxEnergy));
     }
@@ -151,7 +156,7 @@ public class QuantumArmor extends ItemArmorCore implements ISpecialArmor, IEnerg
 
     /* ISpecialArmor */
     @Override
-    public ArmorProperties getProperties(EntityLivingBase player, ItemStack armor, DamageSource source, double damage, int slot) {
+    public ArmorProperties getProperties(EntityLivingBase player,@Nonnull ItemStack armor, DamageSource source, double damage, int slot) {
 
         if ("quantum".equals(source.damageType)) {
             return QUANTUM;
@@ -165,7 +170,7 @@ public class QuantumArmor extends ItemArmorCore implements ISpecialArmor, IEnerg
     }
 
     @Override
-    public int getArmorDisplay(EntityPlayer player, ItemStack armor, int slot) {
+    public int getArmorDisplay(EntityPlayer player,@Nonnull ItemStack armor, int slot) {
 
         if (getEnergyStored(armor) >= getEnergyPerDamage(armor)) {
             return Math.min(getBaseAbsorption(), 20) * getAbsorptionRatio() / 100;
@@ -190,10 +195,10 @@ public class QuantumArmor extends ItemArmorCore implements ISpecialArmor, IEnerg
     }
 
     @Override
-    public void damageArmor(EntityLivingBase entity, ItemStack armor, DamageSource source, int damage, int slot) {
+    public void damageArmor(EntityLivingBase entity,@Nonnull ItemStack armor, DamageSource source, int damage, int slot) {
 
         if (source.damageType.equals("quantum")) {
-            boolean p = source.getEntity() == null;
+            boolean p = source.getTrueSource() == null;
             receiveEnergy(armor, damage * (p ? energyPerDamage / 2 : getEnergyPerDamage(armor)), false);
         } else {
             extractEnergy(armor, damage * getEnergyPerDamage(armor), false);

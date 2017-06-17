@@ -20,22 +20,22 @@ public class ItemManager {
     public static ItemBase CompactCoalBall;
     public static ItemBase CoalChunk;
 
-    public static final ItemArmor.ArmorMaterial ARMOR_MATERIAL_QUANTUM = EnumHelper.addArmorMaterial("IE:QUANTUM","Quantum", 100, new int[] { 3, 8, 6, 3 }, 20 , SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 3.0f);
-    public static final String[] TEXTURE_QUANTUM = { "industrialexpansion:textures/armor/" + "Quantum_1.png", "industrialexpansion:textures/armor/" + "Quantum_2.png" };
+    public static final ItemArmor.ArmorMaterial ARMOR_MATERIAL_QUANTUM = EnumHelper.addArmorMaterial("IE:QUANTUM","quantum", 100, new int[] { 3, 8, 6, 3 }, 20 , SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 3.0f);
+    public static final String[] TEXTURE_QUANTUM = { "industrialexpansion:textures/armor/" + "quantum_1.png", "industrialexpansion:textures/armor/" + "quantum_2.png" };
 
     public static void init() {
-        CoalBall = register(new ItemBase("CoalBall"));
-        CompactCoalBall = register(new ItemBase("CompactCoalBall"));
-        CoalChunk = register(new ItemBase("CoalChunk"));
+        CoalBall = register(new ItemBase("coal_ball"));
+        CompactCoalBall = register(new ItemBase("compact_coal_ball"));
+        CoalChunk = register(new ItemBase("coal_chunk"));
 
-        itemHelmetQuantum = (QuantumArmor) register(new QuantumArmor(ARMOR_MATERIAL_QUANTUM, EntityEquipmentSlot.HEAD).setEnergyParams(20000000, 32000).setArmorTextures(TEXTURE_QUANTUM).setUnlocalizedName("quantumHelmet").setRegistryName("quantumHelmet").setCreativeTab(IndustrialExpansion.tabIndustrialExpansion));
-        itemPlateQuantum = (QuantumArmor) register(new QuantumArmor(ARMOR_MATERIAL_QUANTUM, EntityEquipmentSlot.CHEST).setEnergyParams(20000000, 32000).setArmorTextures(TEXTURE_QUANTUM).setUnlocalizedName("quantumPlate").setRegistryName("quantumPlate").setCreativeTab(IndustrialExpansion.tabIndustrialExpansion));
-        itemLegsQuantum = (QuantumArmor) register(new QuantumArmor(ARMOR_MATERIAL_QUANTUM, EntityEquipmentSlot.LEGS).setEnergyParams(20000000, 32000).setArmorTextures(TEXTURE_QUANTUM).setUnlocalizedName("quantumLegs").setRegistryName("quantumLegs").setCreativeTab(IndustrialExpansion.tabIndustrialExpansion));
-        itemBootsQuantum = (QuantumArmor) register(new QuantumArmor(ARMOR_MATERIAL_QUANTUM, EntityEquipmentSlot.FEET).setEnergyParams(20000000, 32000).setArmorTextures(TEXTURE_QUANTUM).setUnlocalizedName("quantumBoots").setRegistryName("quantumBoots").setCreativeTab(IndustrialExpansion.tabIndustrialExpansion));
-        IndustrialExpansion.proxy.registerItemRenderer(itemHelmetQuantum,0,"quantumHelmet");
-        IndustrialExpansion.proxy.registerItemRenderer(itemPlateQuantum,0,"quantumPlate");
-        IndustrialExpansion.proxy.registerItemRenderer(itemLegsQuantum,0,"quantumLegs");
-        IndustrialExpansion.proxy.registerItemRenderer(itemBootsQuantum,0,"quantumBoots");
+        itemHelmetQuantum = (QuantumArmor) register(new QuantumArmor(ARMOR_MATERIAL_QUANTUM, EntityEquipmentSlot.HEAD).setEnergyParams(20000000, 32000).setArmorTextures(TEXTURE_QUANTUM).setUnlocalizedName("quantum_helmet").setRegistryName("quantum_helmet").setCreativeTab(IndustrialExpansion.tabIndustrialExpansion));
+        itemPlateQuantum = (QuantumArmor) register(new QuantumArmor(ARMOR_MATERIAL_QUANTUM, EntityEquipmentSlot.CHEST).setEnergyParams(20000000, 32000).setArmorTextures(TEXTURE_QUANTUM).setUnlocalizedName("quantum_plate").setRegistryName("quantum_plate").setCreativeTab(IndustrialExpansion.tabIndustrialExpansion));
+        itemLegsQuantum = (QuantumArmor) register(new QuantumArmor(ARMOR_MATERIAL_QUANTUM, EntityEquipmentSlot.LEGS).setEnergyParams(20000000, 32000).setArmorTextures(TEXTURE_QUANTUM).setUnlocalizedName("quantum_legs").setRegistryName("quantum_legs").setCreativeTab(IndustrialExpansion.tabIndustrialExpansion));
+        itemBootsQuantum = (QuantumArmor) register(new QuantumArmor(ARMOR_MATERIAL_QUANTUM, EntityEquipmentSlot.FEET).setEnergyParams(20000000, 32000).setArmorTextures(TEXTURE_QUANTUM).setUnlocalizedName("quantum_boots").setRegistryName("quantum_boots").setCreativeTab(IndustrialExpansion.tabIndustrialExpansion));
+        IndustrialExpansion.proxy.registerItemRenderer(itemHelmetQuantum,0,"quantum_helmet");
+        IndustrialExpansion.proxy.registerItemRenderer(itemPlateQuantum,0,"quantum_plate");
+        IndustrialExpansion.proxy.registerItemRenderer(itemLegsQuantum,0,"quantum_legs");
+        IndustrialExpansion.proxy.registerItemRenderer(itemBootsQuantum,0,"quantum_boots");
     }
 
     private static <T extends Item> T register(T item) {
