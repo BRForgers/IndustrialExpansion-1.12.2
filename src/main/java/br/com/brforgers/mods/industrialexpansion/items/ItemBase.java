@@ -1,10 +1,9 @@
-package cf.brforgers.mods.industrialexpansion.items;
+package br.com.brforgers.mods.industrialexpansion.items;
 
-import cf.brforgers.mods.industrialexpansion.helper.ItemModelProvider;
 import net.minecraft.item.Item;
-import cf.brforgers.mods.industrialexpansion.IndustrialExpansion;
+import br.com.brforgers.mods.industrialexpansion.IndustrialExpansion;
 
-public class ItemBase extends Item implements ItemModelProvider {
+public class ItemBase extends Item {
 
     protected String name;
 
@@ -15,8 +14,7 @@ public class ItemBase extends Item implements ItemModelProvider {
         setCreativeTab(IndustrialExpansion.tabIndustrialExpansion);
     }
 
-    @Override
-    public void registerItemModel(Item item) {
+    public void registerItemModel() {
         IndustrialExpansion.proxy.registerItemRenderer(this, 0, name);
     }
 

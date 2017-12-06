@@ -14,7 +14,7 @@
     "logoFile": "",
     "screenshots": [],
     "dependencies": [
-      "ThermalExpansion","compatlayer"
+      "ThermalExpansion"
     ]
   }
 ]

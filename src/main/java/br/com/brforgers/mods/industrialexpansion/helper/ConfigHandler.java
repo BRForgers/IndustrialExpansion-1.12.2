@@ -1,6 +1,6 @@
-package cf.brforgers.mods.industrialexpansion.helper;
+package br.com.brforgers.mods.industrialexpansion.helper;
 
-import cf.brforgers.mods.industrialexpansion.IndustrialExpansion;
+import br.com.brforgers.mods.industrialexpansion.IndustrialExpansion;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.common.config.Configuration;

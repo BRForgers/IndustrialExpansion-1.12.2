@@ -1,18 +1,22 @@
-package cf.brforgers.mods.industrialexpansion.items;
+package br.com.brforgers.mods.industrialexpansion.items;
 
+import cofh.core.init.CoreEnchantments;
+import cofh.core.item.IEnchantableItem;
 import cofh.core.item.ItemArmorCore;
-import cofh.lib.util.helpers.ItemHelper;
+import cofh.core.util.helpers.ItemHelper;
+import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.init.Enchantments;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.*;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.common.ISpecialArmor;
-import cofh.api.energy.IEnergyContainerItem;
-import cofh.lib.util.helpers.EnergyHelper;
-import cofh.lib.util.helpers.MathHelper;
-import cofh.lib.util.helpers.StringHelper;
-import cf.brforgers.mods.industrialexpansion.helper.DurabillityHelper;
-import cf.brforgers.mods.industrialexpansion.manager.ItemManager;
+import cofh.redstoneflux.api.IEnergyContainerItem;
+import cofh.core.util.helpers.EnergyHelper;
+import cofh.core.util.helpers.MathHelper;
+import cofh.core.util.helpers.StringHelper;
+import br.com.brforgers.mods.industrialexpansion.helper.DurabillityHelper;
+import br.com.brforgers.mods.industrialexpansion.manager.ItemManager;
 import java.util.List;
 
 import net.minecraft.creativetab.CreativeTabs;
@@ -28,8 +32,9 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
-public class QuantumArmor extends ItemArmorCore implements ISpecialArmor, IEnergyContainerItem {
+public class QuantumArmor extends ItemArmorCore implements ISpecialArmor, IEnergyContainerItem, IEnchantableItem {
 
     public static final ISpecialArmor.ArmorProperties QUANTUM = new ArmorProperties(0, 0.20D, Integer.MAX_VALUE);
 
@@ -65,10 +70,10 @@ public class QuantumArmor extends ItemArmorCore implements ISpecialArmor, IEnerg
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack stack, EntityPlayer player, List<String> list, boolean check) {
+    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn){
 
         if (StringHelper.displayShiftForDetail && !StringHelper.isShiftKeyDown()) {
-            list.add(StringHelper.shiftForDetails());
+            tooltip.add(StringHelper.shiftForDetails());
         }
         if (!StringHelper.isShiftKeyDown()) {
             return;
@@ -76,7 +81,7 @@ public class QuantumArmor extends ItemArmorCore implements ISpecialArmor, IEnerg
         if (stack.getTagCompound() == null) {
             EnergyHelper.setDefaultEnergyTag(stack, 0);
         }
-        list.add(StringHelper.localize("info.cofh.charge") + ": " + stack.getTagCompound().getInteger("Energy") + " / " + maxEnergy + " RF");
+        tooltip.add(StringHelper.localize("info.cofh.charge") + ": " + stack.getTagCompound().getInteger("Energy") + " / " + maxEnergy + " RF");
     }
 
     @Override
@@ -119,9 +124,11 @@ public class QuantumArmor extends ItemArmorCore implements ISpecialArmor, IEnerg
     }
 
     @Override
-    public void getSubItems(@Nonnull Item item, CreativeTabs tab, NonNullList<ItemStack> list) {
-        list.add(EnergyHelper.setDefaultEnergyTag(new ItemStack(item, 1, 0), 0));
-        list.add(EnergyHelper.setDefaultEnergyTag(new ItemStack(item, 1, 0), maxEnergy));
+    public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> list) {
+        if(isInCreativeTab(tab) && this.showInCreative) {
+            list.add(EnergyHelper.setDefaultEnergyTag(new ItemStack(this, 1, 0), 0));
+            list.add(EnergyHelper.setDefaultEnergyTag(new ItemStack(this, 1, 0), maxEnergy));
+        }
     }
 
     protected int getBaseAbsorption() {
@@ -251,5 +258,10 @@ public class QuantumArmor extends ItemArmorCore implements ISpecialArmor, IEnerg
     public int getMaxEnergyStored(ItemStack container) {
 
         return maxEnergy;
+    }
+
+    @Override
+    public boolean canEnchant(ItemStack itemStack, Enchantment enchantment) {
+        return enchantment == CoreEnchantments.holding;
     }
 }

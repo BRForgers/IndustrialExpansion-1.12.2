@@ -1,6 +1,6 @@
-package cf.brforgers.mods.industrialexpansion.proxy;
+package br.com.brforgers.mods.industrialexpansion.proxy;
 
-import cf.brforgers.mods.industrialexpansion.IndustrialExpansion;
+import br.com.brforgers.mods.industrialexpansion.IndustrialExpansion;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;

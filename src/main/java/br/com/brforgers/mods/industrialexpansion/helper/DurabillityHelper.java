@@ -1,4 +1,4 @@
-package cf.brforgers.mods.industrialexpansion.helper;
+package br.com.brforgers.mods.industrialexpansion.helper;
 
 public class DurabillityHelper {
 

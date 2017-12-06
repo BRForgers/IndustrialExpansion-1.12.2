@@ -1,6 +1,8 @@
-package cf.brforgers.mods.industrialexpansion.proxy;
+package br.com.brforgers.mods.industrialexpansion.proxy;
 
-import cf.brforgers.mods.industrialexpansion.manager.*;
+import br.com.brforgers.mods.industrialexpansion.manager.ItemManager;
+import br.com.brforgers.mods.industrialexpansion.manager.RecipeManager;
+import br.com.brforgers.mods.industrialexpansion.manager.*;
 import net.minecraft.item.Item;
 
 public class CommonProxy
