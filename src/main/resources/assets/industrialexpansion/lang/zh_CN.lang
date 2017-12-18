@@ -1,0 +1,12 @@
+//Interface
+itemGroup.tabIndustrialExpansion=工业扩充
+
+
+//Items
+item.coal_ball.name=煤球
+item.compact_coal_ball.name=压缩煤球
+item.coal_chunk.name=煤块
+item.quantum_helmet.name=量子头盔
+item.quantum_plate.name=量子胸甲
+item.quantum_legs.name=量子护腿
+item.quantum_boots.name=量子靴子
