@@ -185,6 +185,8 @@ public class QuantumArmor extends ItemArmorCore implements ISpecialArmor, IEnerg
         return 0;
     }
 
+
+
     @Override
     public void onArmorTick(World world, EntityPlayer player, ItemStack armor) {
         if(world.isRemote) return;
@@ -203,7 +205,9 @@ public class QuantumArmor extends ItemArmorCore implements ISpecialArmor, IEnerg
 
     @Override
     public void damageArmor(EntityLivingBase entity,@Nonnull ItemStack armor, DamageSource source, int damage, int slot) {
-
+        if (source.isFireDamage() || source.damageType.equals("darkness")){
+            return;
+        }
         if (source.damageType.equals("quantum")) {
             boolean p = source.getTrueSource() == null;
             receiveEnergy(armor, damage * (p ? energyPerDamage / 2 : getEnergyPerDamage(armor)), false);

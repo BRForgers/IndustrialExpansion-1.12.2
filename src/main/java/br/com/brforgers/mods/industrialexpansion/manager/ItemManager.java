@@ -27,10 +27,10 @@ public class ItemManager {
         CompactCoalBall = new ItemBase("compact_coal_ball");
         CoalChunk = new ItemBase("coal_chunk");
 
-        itemHelmetQuantum = (QuantumArmor) new QuantumArmor(ARMOR_MATERIAL_QUANTUM, EntityEquipmentSlot.HEAD).setEnergyParams(20000000, 32000).setArmorTextures(TEXTURE_QUANTUM).setUnlocalizedName("quantum_helmet").setRegistryName("quantum_helmet").setCreativeTab(IndustrialExpansion.tabIndustrialExpansion);
-        itemPlateQuantum = (QuantumArmor) new QuantumArmor(ARMOR_MATERIAL_QUANTUM, EntityEquipmentSlot.CHEST).setEnergyParams(20000000, 32000).setArmorTextures(TEXTURE_QUANTUM).setUnlocalizedName("quantum_plate").setRegistryName("quantum_plate").setCreativeTab(IndustrialExpansion.tabIndustrialExpansion);
-        itemLegsQuantum = (QuantumArmor) new QuantumArmor(ARMOR_MATERIAL_QUANTUM, EntityEquipmentSlot.LEGS).setEnergyParams(20000000, 32000).setArmorTextures(TEXTURE_QUANTUM).setUnlocalizedName("quantum_legs").setRegistryName("quantum_legs").setCreativeTab(IndustrialExpansion.tabIndustrialExpansion);
-        itemBootsQuantum = (QuantumArmor) new QuantumArmor(ARMOR_MATERIAL_QUANTUM, EntityEquipmentSlot.FEET).setEnergyParams(20000000, 32000).setArmorTextures(TEXTURE_QUANTUM).setUnlocalizedName("quantum_boots").setRegistryName("quantum_boots").setCreativeTab(IndustrialExpansion.tabIndustrialExpansion);
+        itemHelmetQuantum = (QuantumArmor) new QuantumArmor(ARMOR_MATERIAL_QUANTUM, EntityEquipmentSlot.HEAD).setArmorTextures(TEXTURE_QUANTUM).setUnlocalizedName("quantum_helmet").setRegistryName("quantum_helmet").setCreativeTab(IndustrialExpansion.tabIndustrialExpansion);
+        itemPlateQuantum = (QuantumArmor) new QuantumArmor(ARMOR_MATERIAL_QUANTUM, EntityEquipmentSlot.CHEST).setArmorTextures(TEXTURE_QUANTUM).setUnlocalizedName("quantum_plate").setRegistryName("quantum_plate").setCreativeTab(IndustrialExpansion.tabIndustrialExpansion);
+        itemLegsQuantum = (QuantumArmor) new QuantumArmor(ARMOR_MATERIAL_QUANTUM, EntityEquipmentSlot.LEGS).setArmorTextures(TEXTURE_QUANTUM).setUnlocalizedName("quantum_legs").setRegistryName("quantum_legs").setCreativeTab(IndustrialExpansion.tabIndustrialExpansion);
+        itemBootsQuantum = (QuantumArmor) new QuantumArmor(ARMOR_MATERIAL_QUANTUM, EntityEquipmentSlot.FEET).setArmorTextures(TEXTURE_QUANTUM).setUnlocalizedName("quantum_boots").setRegistryName("quantum_boots").setCreativeTab(IndustrialExpansion.tabIndustrialExpansion);
 
     }
 
