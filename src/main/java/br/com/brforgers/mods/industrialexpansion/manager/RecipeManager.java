@@ -29,12 +29,12 @@ public class RecipeManager {
                 "AAA","ABA","AAA",
                 'A', "dustCoal",
                 'B', Items.FLINT);
-        CompactorManager.addRecipe(ConfigHandler.energyCompactCoalBall, new ItemStack(ItemManager.CoalBall),new ItemStack(ItemManager.CompactCoalBall), CompactorManager.Mode.PRESS);
+        CompactorManager.addRecipe(ConfigHandler.energyCompactCoalBall, new ItemStack(ItemManager.CoalBall),new ItemStack(ItemManager.CompactCoalBall), CompactorManager.Mode.PLATE);
         GameRegistry.addShapedRecipe(new ResourceLocation(IndustrialExpansion.MOD_ID,"coalchuck"),group,new ItemStack(ItemManager.CoalChunk,1),
                 "AAA","ABA","AAA",
                 'A', ItemManager.CompactCoalBall,
                 'B', Blocks.OBSIDIAN);
-        CompactorManager.addRecipe(ConfigHandler.energyDiamond, new ItemStack(ItemManager.CoalChunk),new ItemStack(Items.DIAMOND), CompactorManager.Mode.PRESS);
+        CompactorManager.addRecipe(ConfigHandler.energyDiamond, new ItemStack(ItemManager.CoalChunk),new ItemStack(Items.DIAMOND), CompactorManager.Mode.PLATE);
         GameRegistry.addShapedRecipe(new ResourceLocation(IndustrialExpansion.MOD_ID,"quantumhelmet"),group, new ItemStack(ItemManager.itemHelmetQuantum,1),
                 " A ","BCB","DED",
                 'A', Items.DIAMOND_HELMET,
@@ -64,14 +64,14 @@ public class RecipeManager {
         //More Recipes Update
         int energyPress = 4000,
             energyStorage = 400;
-        CompactorManager.addRecipe(energyPress, new ItemStack(Items.BLAZE_POWDER,5), new ItemStack(Items.BLAZE_ROD), CompactorManager.Mode.PRESS);
-        CompactorManager.addRecipe(energyPress, new ItemStack(Blocks.SNOW), new ItemStack(Blocks.ICE), CompactorManager.Mode.PRESS);
-        CompactorManager.addRecipe(energyStorage, new ItemStack(Items.SNOWBALL, 4), new ItemStack(Blocks.SNOW), CompactorManager.Mode.STORAGE);
-        CompactorManager.addRecipe(energyStorage, new ItemStack(Blocks.SAND,4,0), new ItemStack(Blocks.SANDSTONE,1,0), CompactorManager.Mode.STORAGE);
-        CompactorManager.addRecipe(energyStorage, new ItemStack(Blocks.SAND,4,1), new ItemStack(Blocks.RED_SANDSTONE,1,0), CompactorManager.Mode.STORAGE);
-        CompactorManager.addRecipe(energyStorage, new ItemStack(Items.CLAY_BALL,4), new ItemStack(Blocks.CLAY), CompactorManager.Mode.STORAGE);
-        CompactorManager.addRecipe(energyStorage, new ItemStack(Items.NETHERBRICK,4), new ItemStack(Blocks.NETHER_BRICK), CompactorManager.Mode.STORAGE);
-        CompactorManager.addRecipe(energyStorage, new ItemStack(Items.GLOWSTONE_DUST,4), new ItemStack(Blocks.GLOWSTONE), CompactorManager.Mode.STORAGE);
-        CompactorManager.addRecipe(energyStorage, new ItemStack(Items.BRICK,4), new ItemStack(Blocks.BRICK_BLOCK), CompactorManager.Mode.STORAGE);
+        CompactorManager.addRecipe(energyPress, new ItemStack(Items.BLAZE_POWDER,5), new ItemStack(Items.BLAZE_ROD), CompactorManager.Mode.PLATE);
+        CompactorManager.addRecipe(energyPress, new ItemStack(Blocks.SNOW), new ItemStack(Blocks.ICE), CompactorManager.Mode.PLATE);
+        CompactorManager.addRecipe(energyStorage, new ItemStack(Items.SNOWBALL, 4), new ItemStack(Blocks.SNOW), CompactorManager.Mode.ALL);
+        CompactorManager.addRecipe(energyStorage, new ItemStack(Blocks.SAND,4,0), new ItemStack(Blocks.SANDSTONE,1,0), CompactorManager.Mode.ALL);
+        CompactorManager.addRecipe(energyStorage, new ItemStack(Blocks.SAND,4,1), new ItemStack(Blocks.RED_SANDSTONE,1,0), CompactorManager.Mode.ALL);
+        CompactorManager.addRecipe(energyStorage, new ItemStack(Items.CLAY_BALL,4), new ItemStack(Blocks.CLAY), CompactorManager.Mode.ALL);
+        CompactorManager.addRecipe(energyStorage, new ItemStack(Items.NETHERBRICK,4), new ItemStack(Blocks.NETHER_BRICK), CompactorManager.Mode.ALL);
+        CompactorManager.addRecipe(energyStorage, new ItemStack(Items.GLOWSTONE_DUST,4), new ItemStack(Blocks.GLOWSTONE), CompactorManager.Mode.ALL);
+        CompactorManager.addRecipe(energyStorage, new ItemStack(Items.BRICK,4), new ItemStack(Blocks.BRICK_BLOCK), CompactorManager.Mode.ALL);
     }
 }
